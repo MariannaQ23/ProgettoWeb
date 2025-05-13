@@ -1,0 +1,21 @@
+@Getter
+@Setter 
+@NoArgsConstructor
+@AllArgsConstructor
+public class PrenotazioneDTO {
+    private String nome;
+
+    private String cognome;
+
+    private int nPersone;
+
+    private Date dataPrenotazione;
+
+    private Pasto pasto;
+
+    private String telefono;
+
+    private String note;
+
+    private Account account;
+}

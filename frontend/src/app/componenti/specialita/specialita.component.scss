@@ -1,0 +1,34 @@
+.antipasti {
+	width:100%;
+	height:50%;
+	}
+.primi {
+	width:100%;
+	height:50%;
+	}
+.secondi {
+	width:100%;
+	height:50%;
+	}
+.controni {
+	width:100%;
+	height:100%;
+	}
+.dolci {
+	width:100%;
+	height:57%;
+	}
+.vini {
+	width:100%;
+	height:90%;
+	}
+    
+.centrale {
+	margin-left: auto;
+	margin-right: auto;
+	display: table; /* Mantenere il comportamento tabella */
+}
+
+.c{
+    text-align: center;
+}
