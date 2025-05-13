@@ -1,17 +1,21 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { AuthenticationService } from '../../Auth/AuthenticationService';
+import { LoginRequest } from '../../Auth/LoginRequest';
+import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-login',
-  imports: [RouterLink],
+  standalone: false,
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-/*  email: string = '';
+  email: string = '';
   password: string = '';
   errorMessage: string | null = null;
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthenticationService, private router: Router) { }
 
   onLogin(): void {
     this.errorMessage = null;
@@ -29,8 +33,6 @@ export class LoginComponent {
       },
     });
 
-  }*/
-
-
+  }
 
 }

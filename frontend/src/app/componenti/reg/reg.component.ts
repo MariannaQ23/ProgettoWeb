@@ -7,7 +7,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-reg',
-  imports: [],
+  standalone:false,
   templateUrl: './reg.component.html',
   styleUrl: './reg.component.scss'
 })
