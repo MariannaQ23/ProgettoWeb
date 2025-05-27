@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
-import {catchError, Observable, throwError} from 'rxjs';
+import {catchError, Observable, tap, throwError} from 'rxjs';
 import {AuthResponse} from '../Auth/AuthResponse';
 import {LoginRequest} from '../Auth/LoginRequest';
 import {Router} from '@angular/router';
@@ -17,8 +17,11 @@ export class AuthenticationService {
   }
 
   login(loginRequest: LoginRequest): Observable<AuthResponse> {
-    return this.http.post<AuthResponse>(`${this.apiUrl}/login`, loginRequest).pipe
-    (catchError(this.handleError));
+    return this.http.post<AuthResponse>(`${this.apiUrl}/login`, loginRequest).pipe(
+    tap(response => {
+      this.saveTokens(response);  // Salva i token dopo il login
+    }),
+    catchError(this.handleError));
   }
 
 

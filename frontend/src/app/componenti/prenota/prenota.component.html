@@ -1,9 +1,6 @@
-<html>
-    <head>
-        <title> Iris Fish </title>
-	</head>
-	
-	<body>
+<!--
+<form action="http://localhost:8080/prenotazione" method="POST">
+
         <div class="centrale">
             <table>
                 <tr>
@@ -91,12 +88,44 @@
                 <tr>
                     <td></td>
                     <td>
-                        <input type="submit" name="invia" value="INVIA PRENOTAZIONE">
+                        <input type="submit" value="INVIA PRENOTAZIONE">
                     </td>
                 </tr>
             </table>
         </div>
 		<br><br><br>
-        
-    </body>
-</html>
+
+</form>
+-->
+
+
+
+
+<form (ngSubmit)="inviaPrenotazione()" #f="ngForm">
+  <label>Nome *</label>
+  <input type="text" name="nome" [(ngModel)]="prenotazioneDTO.nome" required><br>
+
+  <label>Cognome *</label>
+  <input type="text" name="cognome" [(ngModel)]="prenotazioneDTO.cognome" required><br>
+
+  <label>Data di prenotazione *</label>
+  <input type="date" name="dataPrenotazione" [(ngModel)]="prenotazioneDTO.dataPrenotazione" required><br>
+
+  <label>Persone *</label>
+  <input type="number" name="nPersone" [(ngModel)]="prenotazioneDTO.nPersone" required><br>
+
+  <label>Ora *</label>
+  <input type="radio" name="pasto" value="Pranzo" [(ngModel)]="prenotazioneDTO.pasto" required> Pranzo
+  <input type="radio" name="pasto" value="Cena" [(ngModel)]="prenotazioneDTO.pasto"> Cena<br>
+
+  <label>Telefono *</label>
+  <input type="text" name="telefono" [(ngModel)]="prenotazioneDTO.telefono" required><br>
+
+  <label>Richieste particolari</label><br>
+  <textarea name="note" [(ngModel)]="prenotazioneDTO.note" rows="4" cols="50"></textarea><br><br>
+
+  <button type="submit" [disabled]="!f.valid">Invia Prenotazione</button>
+</form>
+
+<a [routerLink]="['/registro-prenotazioni']">Prenotazioni Effettuate</a>
+<router-outlet></router-outlet>

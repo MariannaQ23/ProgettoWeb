@@ -8,6 +8,7 @@ import it.cs.unicam.backend.Auth.RegisterRequest;
 
 import it.cs.unicam.backend.Entity.Account;
 import it.cs.unicam.backend.Entity.Token;
+import it.cs.unicam.backend.Repository.AccountRepository;
 import it.cs.unicam.backend.Repository.TokenRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -26,6 +27,9 @@ import java.util.List;
 public class AuthService {
     @Autowired
     private AccountService accountService;
+
+    @Autowired
+    private AccountRepository accountRepository;
     @Autowired
     private PasswordEncoder passwordEncoder;
 
@@ -38,11 +42,15 @@ public class AuthService {
 
 
     public AuthResponse register(RegisterRequest request) throws ExistingUserException {
+        if (accountRepository.existsAccountByEmail(request.email())) {
+            throw new ExistingUserException("L'utente esiste già");
+        }
+
         Account account = accountService.createAccount(request.email(), passwordEncoder.encode(request.password()), request.username());
         String accessToken = jwtService.generateAccessToken(account);
         String refreshToken = jwtService.generateRefreshToken(account);
         saveUserToken(accessToken, refreshToken, account);
-        return new AuthResponse(accessToken, refreshToken, "User registration was successful");
+        return new AuthResponse(accessToken, refreshToken, "Registrazione avvenuta con successo");
     }
 
     public AuthResponse authenticate(LoginRequest request) {

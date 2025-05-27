@@ -20,7 +20,7 @@ public class AccountService {
     public Account createAccount(String email, String password, String username) throws ExistingUserException {
         Optional<Account> account = accountRepository.findByEmail(email);
         if (account.isPresent()) {
-            throw new ExistingUserException();
+            throw new ExistingUserException("L'account esiste già");
         }
         Account newAccount = new Account(email, password, username);
         accountRepository.save(newAccount);

@@ -22,13 +22,27 @@ export class RegComponent {
   }
 
   onRegister(): void {
+
+    console.log('onRegister() chiamato');
+
+
     this.errorMessage = null;
     const registerRequest = new RegisterRequest(this.email, this.password, this.username);
+    
+    console.log('Dati inviati per la registrazione:', registerRequest);
+    
+    
     this.authService.register(registerRequest).subscribe({
       next: (response) => {
+
+        console.log('Registrazione avvenuta con successo:', response);
+
         this.authService.saveTokens(response);
         this.router.navigate(['/prenotazione']);
       }, error: (error: HttpErrorResponse) => {
+
+        console.error('Errore durante la registrazione:', error);
+
         if (error.error && typeof error.error === 'string') {
           this.errorMessage = "Si è verificato un problema";
         } else {
