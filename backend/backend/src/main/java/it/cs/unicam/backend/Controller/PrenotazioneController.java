@@ -29,7 +29,6 @@ public class PrenotazioneController {
     @PostMapping("/crea")
     public ResponseEntity<String> creaPrenotazione(@RequestBody PrenotazioneDTO prenotazioneDTO) {
         try {
-            System.out.println(prenotazioneDTO.getNPersone());
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
             Account account = (Account) authentication.getPrincipal();
             account = accountService.getAccountById(account.getId());

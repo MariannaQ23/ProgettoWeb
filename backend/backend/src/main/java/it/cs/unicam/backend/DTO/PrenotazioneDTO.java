@@ -1,5 +1,7 @@
 package it.cs.unicam.backend.DTO;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import it.cs.unicam.backend.Entity.Account;
 import it.cs.unicam.backend.Entity.Prenotazione;
 import lombok.AllArgsConstructor;
@@ -18,7 +20,8 @@ public class PrenotazioneDTO {
 
     private String cognome;
 
-    private int nPersone;
+    @JsonProperty("nPersone") // forza il nome nel JSON
+    private Integer nPersone; 
 
     private LocalDate dataPrenotazione;
 
@@ -27,4 +30,5 @@ public class PrenotazioneDTO {
     private String telefono;
 
     private String note;
+
 }
