@@ -61,7 +61,7 @@ public class PrenotazioneController {
             return ResponseEntity.ok(this.prenotazioneService.getPrenotazioniAccount(account));
 
         }catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Ops sembra ci sia stato un errore!");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Si è verificato un errore");
         }
     }
 }

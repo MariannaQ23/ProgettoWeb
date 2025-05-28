@@ -22,7 +22,7 @@ export class PrenotaComponent {
   constructor(private http: HttpClient) {}
 
   inviaPrenotazione() {
-    this.http.post('http://localhost:8080/crea', this.prenotazioneDTO)
+    this.http.post('http://localhost:8080/crea', this.prenotazioneDTO, { responseType: 'text' })
       .subscribe({
         next: response => {
           alert('Prenotazione inviata con successo!');
@@ -34,3 +34,6 @@ export class PrenotaComponent {
     });
   }
 }
+
+
+

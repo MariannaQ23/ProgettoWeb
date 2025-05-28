@@ -5,6 +5,7 @@ import { PrenotaComponent } from "./componenti/prenota/prenota.component";
 import { RegComponent } from "./componenti/reg/reg.component";
 import { SpecialitaComponent } from "./componenti/specialita/specialita.component";
 import { NgModule } from "@angular/core";
+import { RegistroPrenotazioniComponent } from "./componenti/registro-prenotazioni/registro-prenotazioni.component";
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
     {path:'specialita', component: SpecialitaComponent},
     {path:'prenotazione', component: PrenotaComponent},
     {path:'login', component:LoginComponent},
-    {path:'reg', component:RegComponent}
+    {path:'reg', component:RegComponent},
+    {path:'registro-prenotazioni', component:RegistroPrenotazioniComponent}
 ];
 
 @NgModule({

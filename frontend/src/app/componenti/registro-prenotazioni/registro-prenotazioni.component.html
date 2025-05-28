@@ -1,1 +1,18 @@
-<p>registro-prenotazioni works!</p>
+<h2>Le tue prenotazioni</h2>
+
+<ul *ngIf="prenotazioni.length > 0; else nessunaPrenotazione">
+  <li *ngFor="let p of prenotazioni">
+    <strong>Nome:</strong> {{ p.nome }}<br>
+    <strong>Cognome:</strong> {{ p.cognome }}<br>
+    <strong>Numero persone:</strong> {{ p.nPersone }}<br>
+    <strong>Data:</strong> {{ p.dataPrenotazione}}<br>
+    <strong>Pasto:</strong> {{ p.pasto }}<br>
+    <strong>Telefono:</strong> {{ p.telefono }}<br>
+    <strong>Note:</strong> {{ p.note || 'Nessuna' }}<br>
+    <hr>
+  </li>
+</ul>
+
+<ng-template #nessunaPrenotazione>
+  <p>Nessuna prenotazione trovata.</p>
+</ng-template>

@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
 import { RegComponent } from './componenti/reg/reg.component';
 import { PrenotaComponent } from './componenti/prenota/prenota.component';
 import {TokenInterceptor} from './tokenInterceptor';
+import { RegistroPrenotazioniComponent } from './componenti/registro-prenotazioni/registro-prenotazioni.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {TokenInterceptor} from './tokenInterceptor';
     AppComponent, 
     LoginComponent,
     RegComponent,
-    PrenotaComponent
+    PrenotaComponent,
+    RegistroPrenotazioniComponent
 
 
   ],

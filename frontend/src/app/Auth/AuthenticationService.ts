@@ -56,9 +56,9 @@ export class AuthenticationService {
 
   saveTokens(authResponse: AuthResponse): void {
     sessionStorage.clear();
-    if (authResponse && authResponse.access_token && authResponse.refresh_token) {
-      sessionStorage.setItem('accessToken', authResponse.access_token);
-      sessionStorage.setItem('refreshToken', authResponse.refresh_token);
+    if (authResponse && authResponse.accessToken && authResponse.refreshToken) {
+      sessionStorage.setItem('accessToken', authResponse.accessToken);
+      sessionStorage.setItem('refreshToken', authResponse.refreshToken);
 
     }
   }
