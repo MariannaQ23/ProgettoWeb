@@ -3,12 +3,22 @@
     font-family:"Times New Romans"
 }
 
-.red{
-    color:red;
+.textarea-responsive {
+  width: 50%;              
+  min-height: 120px;        
+  padding: 10px;
+  font-size: 1rem;
+  font-family: "Times New Roman", serif;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;         
+  box-sizing: border-box;   
+  background-color: #ffffff;
 }
 
-.centrale {
-    margin-left: auto;
-    margin-right: auto;
-    display: table; /* Mantenere il comportamento tabella */
+@media (max-width: 768px) {
+  .textarea-responsive {
+    font-size: 0.95rem;
+    min-height: 100px;
+  }
 }

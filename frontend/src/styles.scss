@@ -1,52 +1,68 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-	background-color:#DBFFFC;
-	font-family: "Times New Roman", Arial,Verdana;
-	}
+  background-color: #DBFFFC;
+  font-family: "Times New Roman", Arial, Verdana;
+  margin: 0;
+  padding: 0;
+}
 
-h1 {font-family:"Times New Roman",Arial,Verdana;
-        font-size:160%;
-   }
-   
-h2 {font-family:"Times New Roman",Arial,Verdana;
-    font-size:200%;
-    }
+h1 {
+  font-size: 160%;
+}
+
+h2 {
+  font-size: 200%;
+}
 
 .navbar {
-    background-color: #80DFFF !important; // Override Bootstrap
-    
-    }
-    
-.navbar-nav li {
-    display: inline !important; // Override Bootstrap
-    font-size: 150% !important;
-    padding-left: 60% !important;
-    padding-right: 50% !important;
-    }
-    
-.navbar-nav a {
-    text-decoration: none;
-    color: #0000BD !important; // Link non visitati
-    }
-    
-.navbar-nav a:visited {
-    color: #3366FF !important;
-    }
+  background-color: #80DFFF !important;
 
-.logo{
-    height:40%;
-    width:50%;
-    margin-left: 23%;
-	margin-right: 27%;
+  .nav-item {
+    margin: 0 10rem; 
+  }
+
+  .nav-link {
+    color: #0000BD !important;
+    font-size: 1.4rem;
+  }
+
+  .nav-link:visited {
+    color: #3366FF !important;
+  }
+}
+
+.logo {
+  display: block;
+  max-width: 300px;
+  width: 80%;
+  margin: 1rem auto;
 }
 
 .footer {background-color:#80DFFF;
+    text-align: center;
     color:#0000BD;
     font-size:120%;
-    }
+}
+
 
 .footer li{
-    display: inline;
-    padding-left: 15%;
-    padding-right: 15%;
+    display: inline-block;
+    margin: 0 1.5rem;
 } 
+
+@media (max-width: 768px) {
+  .navbar .nav-link {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  .footer li {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  .logo {
+    width: 100%;
+    max-width: 200px;
+  }
+}

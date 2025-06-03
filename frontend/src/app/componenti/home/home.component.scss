@@ -1,15 +1,29 @@
-p{
-    size: 5;
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
 }
 
-.posto{
-    height: 30%;
-    width: 30%;
-    margin-left: 28%;
+.posto,
+.cartina {
+  width: 100%;
+  max-width: 400px; /* limite dimensione massima */
+  margin: 1rem auto;
+  display: block;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
 }
 
-.cartina{
-    
-    margin-left: 23%;
-	margin-right: 27%;
+@media (max-width: 600px) {
+  .chi-siamo-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .chi-siamo-container p {
+    font-size: 1rem;
+  }
 }
